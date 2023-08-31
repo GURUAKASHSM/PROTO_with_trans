@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+option go_package = "github.com/GURUAKASH-MUTHURAJAN/Netxd_Customer";
+
+package Netxd_Customer;
+
+service CustomerService {
+    rpc CreateCustomer (Customer) returns (CustomerResponse);
+    rpc TransferAmount (Transaction) returns (TransactionResponse);
+}
+
+message Customer {
+    int64 Customer_Id = 1;
+    string FirstName = 2;
+    string LastName = 3;
+    string Bank_id = 4;
+    float Balance = 5;
+    string CreatedAt = 6;
+    string UpdatedAt = 7;
+    bool IsActive = 8;
+}
+message Transaction {
+    string From_customer =1;
+    string To_coustomer =2;
+    float Amount =3;
+}
+message TransactionResponse {
+    string From_customer =1;
+    string To_coustomer =2;
+    float Amount =3;
+}
+
+message CustomerResponse {
+    int64 Customer_Id = 1;
+    string FirstName = 2;
+    string LastName = 3;
+    string Bank_id = 4;
+    float Balance = 5;
+    string CreatedAt = 6;
+    string UpdatedAt = 7;
+    bool IsActive = 8;
+}
